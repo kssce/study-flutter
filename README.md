@@ -1,3 +1,2 @@
-# intro_flutter
+# study for flutter
 
-intro of study for flutter
