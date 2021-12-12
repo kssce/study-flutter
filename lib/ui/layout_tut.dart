@@ -1,5 +1,52 @@
 import 'package:flutter/material.dart';
 
+class FavoriteWidget extends StatefulWidget {
+  const FavoriteWidget({Key? key}) : super(key: key);
+
+  @override
+  _FavoriteWidgetState createState() => _FavoriteWidgetState();
+}
+
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  bool _isFavorited = true;
+  int _favoriteCount = 41;
+
+  void _toggleFavorite() {
+    setState(() {
+      if (_isFavorited) {
+        _favoriteCount -= 1;
+        _isFavorited = false;
+      } else {
+        _favoriteCount += 1;
+        _isFavorited = true;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(0),
+          child: IconButton(
+            padding: const EdgeInsets.all(0),
+            alignment: Alignment.centerRight,
+            icon: (_isFavorited ? const Icon(Icons.star) : const Icon(
+                Icons.star_border)),
+            color: Colors.red[500],
+            onPressed: _toggleFavorite,
+          ),
+        ),
+        SizedBox(
+            width: 18, child: SizedBox(child: Text("$_favoriteCount"))
+        )
+      ],
+    );
+  }
+}
+
 class LayoutTutorial extends StatelessWidget {
   const LayoutTutorial({Key? key}) : super(key: key);
 
@@ -19,7 +66,8 @@ class LayoutTutorial extends StatelessWidget {
 }
 
 Widget _imageCover() {
-  return Image.asset('assets/images/cat2.png', width: 600, height: 240, fit: BoxFit.cover);
+  return Image.asset(
+      'assets/images/cat2.png', width: 600, height: 240, fit: BoxFit.cover);
 }
 
 Widget _titleSection() {
@@ -45,18 +93,21 @@ Widget _titleSection() {
             ],
           ),
         ),
-        Icon(
-          Icons.star,
-          color: Colors.red[500],
-        ),
-        const Text('41'),
+        const FavoriteWidget()
+        // Icon(
+        //   Icons.star,
+        //   color: Colors.red[500],
+        // ),
+        // const Text('41'),
       ],
     ),
   );
 }
 
 Widget _buttons(BuildContext context) {
-  var clr = Theme.of(context).primaryColor;
+  var clr = Theme
+      .of(context)
+      .primaryColor;
   return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
     _button(clr, Icons.call, 'CALL'),
     _button(clr, Icons.near_me, 'ROUTE'),
@@ -90,10 +141,11 @@ Widget _description() {
       padding: const EdgeInsets.all(32),
       child: const Text(
         '안녕하신가, 힘세고 강한 아침. 만일 내게 물어보면 나는 왈도. '
-        'Alps. Situated 1,578 meters above sea level, it is one of the '
-        'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-        'half-hour walk through pastures and pine forest, leads you to the '
-        'lake, which warms to 20 degrees Celsius in the summer. Activities ',
+            'Alps. Situated 1,578 meters above sea level, it is one of the '
+            'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
+            'half-hour walk through pastures and pine forest, leads you to the '
+            'lake, which warms to 20 degrees Celsius in the summer. Activities ',
         softWrap: true,
       ));
 }
+
