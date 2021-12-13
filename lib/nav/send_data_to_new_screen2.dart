@@ -1,30 +1,25 @@
 import 'package:flutter/material.dart';
 
-class Todo {
-  final String title;
-  final String description;
+import 'send_data_to_new_screen.dart';
 
-  const Todo(this.title, this.description);
-}
-
-// 생성자로 만들기
-class SendDataToNewScreen extends StatelessWidget {
-  const SendDataToNewScreen({Key? key}) : super(key: key);
+// ModalRoute.of() 로 arguments 접근하는 방법
+class SendDataToNewScreen2 extends StatelessWidget {
+  const SendDataToNewScreen2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Send data to new screen',
-        home: _TodosScreen(
+        title: 'Send data to new screen2',
+        home: TodosScreen(
             todos: List.generate(
-                200,
+                300,
                 (i) => Todo('Todo $i',
                     'A description of what needs to be done for Todo $i'))));
   }
 }
 
-class _TodosScreen extends StatelessWidget {
-  const _TodosScreen({Key? key, required this.todos}) : super(key: key);
+class TodosScreen extends StatelessWidget {
+  const TodosScreen({Key? key, required this.todos}) : super(key: key);
 
   final List<Todo> todos;
 
@@ -41,23 +36,26 @@ class _TodosScreen extends StatelessWidget {
                 title: Text(todos[index].title),
                 onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              _DetailScreen(todo: todos[index])));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DetailScreen(),
+                        // arguments 설정
+                        settings: RouteSettings(arguments: todos[index])),
+                  );
                 });
           },
         ));
   }
 }
 
-class _DetailScreen extends StatelessWidget {
-  const _DetailScreen({Key? key, required this.todo}) : super(key: key);
-
-  final Todo todo;
+class DetailScreen extends StatelessWidget {
+  const DetailScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // arguments 접근
+    final todo = ModalRoute.of(context)!.settings.arguments as Todo;
+
     return Scaffold(
         appBar: AppBar(
           title: Text(todo.title),
