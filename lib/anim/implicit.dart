@@ -162,6 +162,7 @@ class _AnimatedPositionedDirectionalScreenState
         children: <Widget>[
           AnimatedSwitcher(
             duration: const Duration(milliseconds: 500),
+            // Animation: 어떻게 값을 animate 할 지 정해져있는 객체
             transitionBuilder: (Widget child, Animation<double> animation) {
               // return ScaleTransition(child: child, scale: animation);
               return FadeTransition(opacity: animation, child: child);

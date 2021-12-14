@@ -1,7 +1,3 @@
-// Tweens 는 키 프레임 애니메이션 사용시 사용 (사이 보간)
-//   범위는 0.0 ~ 1.0
-//   상태 비저장 객체
-
 // AnimationController: 하드웨어가 새 프레임을 준비할 때마다 새 값을 생성하는 특수 객체
 
 // 무상태 애니메이션은 AnimatedWidget
@@ -14,9 +10,10 @@
 // todo AnimationController
 // todo Animation
 import 'package:flutter/material.dart';
+import 'package:intro_flutter/anim/tween.dart';
 
 import 'implicit.dart';
-import 'basic.dart';
+import 'tween2.dart';
 
 class AnimBasic extends StatelessWidget {
   const AnimBasic({Key? key}) : super(key: key);
@@ -26,7 +23,8 @@ class AnimBasic extends StatelessWidget {
     return MaterialApp(title: 'Animation Tutorial', initialRoute: '/', routes: {
       '/': (context) => const _HomeScreen(),
       '/implicit/1': (context) => const ImplicitContainer(),
-      '/basic/1': (context) => const BasicAnim()
+      '/tween/1': (context) => const TweenContainer(),
+      '/tween/2': (context) => const Tween2(),
     });
   }
 }
@@ -49,9 +47,14 @@ class _HomeScreen extends StatelessWidget {
               child: const Text('implicit 1')),
           ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/basic/1');
+                Navigator.pushNamed(context, '/tween/1');
               },
-              child: const Text('basic 1'))
+              child: const Text('tween 1')),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/tween/2');
+              },
+              child: const Text('tween 2'))
         ])));
   }
 }

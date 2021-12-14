@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 // Controller: 시작 방향, 등 애니메이션 자체를 컨트롤
-// Animation: 어떻게 값을 animate 할 지 미리 정해진 것으로,
 //  두 개의 값(혹은 타입) 사이의 보간된 숫자를 생성한다.
 // CurvedAnimation: 애니메이션 진행 상황을 비선형 곡선으로 정의
-// vsync: 오프스크린 애니메이션이 불필요한 리소스를 소비하는 것을 방지
 
-class BasicAnim extends StatelessWidget {
-  const BasicAnim({Key? key}) : super(key: key);
+class Tween2 extends StatelessWidget {
+  const Tween2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
