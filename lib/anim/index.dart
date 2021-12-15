@@ -28,7 +28,7 @@ class AnimBasic extends StatelessWidget {
       '/tween/1': (context) => const TweenContainer(),
       '/tween/2': (context) => const Tween2(),
       '/hero': (context) => const HeroAnimation(),
-      '/hero/radial': (context) => const RadialHero()
+      '/hero/radial': (context) => const RadialExpansionDemo()
     });
   }
 }

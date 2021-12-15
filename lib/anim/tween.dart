@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 // (vsync: 오프스크린 애니메이션이 불필요한 리소스를 소비하는 것을 방지)
 // 이 때는 간단하게 with TickerProviderStateMixin 을 추가해주면
 // 객체가 TickerProvider 가 되기 때문에 this 로 넘겨줄 수 있게 된다
+// implicit 이 자동으로 구현한 느낌이라면 tween 은 속성과 양끝점을 정의한 애니메이션
 
 class TweenContainer extends StatelessWidget {
   const TweenContainer({Key? key}) : super(key: key);
