@@ -10,8 +10,10 @@
 // todo AnimationController
 // todo Animation
 import 'package:flutter/material.dart';
+import 'package:intro_flutter/anim/radial_hero.dart';
 import 'package:intro_flutter/anim/tween.dart';
 
+import 'hero.dart';
 import 'implicit.dart';
 import 'tween2.dart';
 
@@ -25,6 +27,8 @@ class AnimBasic extends StatelessWidget {
       '/implicit/1': (context) => const ImplicitContainer(),
       '/tween/1': (context) => const TweenContainer(),
       '/tween/2': (context) => const Tween2(),
+      '/hero': (context) => const HeroAnimation(),
+      '/hero/radial': (context) => const RadialHero()
     });
   }
 }
@@ -54,7 +58,17 @@ class _HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/tween/2');
               },
-              child: const Text('tween 2'))
+              child: const Text('tween 2')),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/hero');
+              },
+              child: const Text('hero')),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/hero/radial');
+              },
+              child: const Text('radial hero'))
         ])));
   }
 }
