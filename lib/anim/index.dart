@@ -11,6 +11,7 @@
 // todo Animation
 import 'package:flutter/material.dart';
 import 'package:intro_flutter/anim/radial_hero.dart';
+import 'package:intro_flutter/anim/staggered1.dart';
 import 'package:intro_flutter/anim/tween.dart';
 
 import 'hero.dart';
@@ -28,7 +29,8 @@ class AnimBasic extends StatelessWidget {
       '/tween/1': (context) => const TweenContainer(),
       '/tween/2': (context) => const Tween2(),
       '/hero': (context) => const HeroAnimation(),
-      '/hero/radial': (context) => const RadialExpansionDemo()
+      '/hero/radial': (context) => const RadialExpansionDemo(),
+      '/staggered/1': (context) => const BasicStaggeredDemo()
     });
   }
 }
@@ -38,37 +40,26 @@ class _HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var routeBtn = buildRouteBtnWith(context);
     return Scaffold(
         appBar: AppBar(
           title: const Text('Animation Home'),
         ),
         body: Center(
             child: Column(children: [
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/implicit/1');
-              },
-              child: const Text('implicit 1')),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/tween/1');
-              },
-              child: const Text('tween 1')),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/tween/2');
-              },
-              child: const Text('tween 2')),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/hero');
-              },
-              child: const Text('hero')),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/hero/radial');
-              },
-              child: const Text('radial hero'))
+          routeBtn(path: '/implicit/1', title: 'implicit 1'),
+          routeBtn(path: '/tween/1', title: 'tween 1'),
+          routeBtn(path: '/tween/2', title: 'tween 2'),
+          routeBtn(path: '/hero', title: 'hero'),
+          routeBtn(path: '/hero/radial', title: 'radial hero'),
+          routeBtn(path: '/staggered/1', title: 'staggered 1'),
         ])));
   }
 }
+
+Widget Function({required String path, required String title}) buildRouteBtnWith(BuildContext context) =>
+    ({required String path, required String title}) => ElevatedButton(
+        onPressed: () {
+          Navigator.pushNamed(context, path);
+        },
+        child: Text(title));
