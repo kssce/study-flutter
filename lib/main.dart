@@ -11,6 +11,7 @@ import 'package:intro_flutter/ui/layout_study.dart';
 import 'package:intro_flutter/ui/layout_tut.dart';
 import 'package:intro_flutter/ui/responsive.dart';
 
+import 'advanced_ui/actions_and_shortcuts.dart';
 import 'anim/index.dart';
 import 'nav/basic.dart';
 import 'nav/nav_with_named_routes.dart';
@@ -39,4 +40,5 @@ import 'ui/state_example.dart';
 // void main() => runApp(const ReturnDataFromScreen());
 // void main() => runApp(const SendDataToNewScreen());
 // void main() => runApp(const SendDataToNewScreen2());
-void main() => runApp(const AnimBasic());
+// void main() => runApp(const AnimBasic());
+void main() => runApp(const ActionsAndShortcuts());
