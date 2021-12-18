@@ -17,6 +17,7 @@ import 'anim/index.dart';
 import 'nav/basic.dart';
 import 'nav/nav_with_named_routes.dart';
 import 'nav/send_data_to_new_screen2.dart';
+import 'state_management/basic_state_mng.dart';
 import 'tutorial/first_infinite_scroll.dart';
 import 'ui/state_example.dart';
 
@@ -43,4 +44,5 @@ import 'ui/state_example.dart';
 // void main() => runApp(const SendDataToNewScreen2());
 // void main() => runApp(const AnimBasic());
 // void main() => runApp(const ActionsAndShortcuts());
-void main() => runApp(const Slivers());
+// void main() => runApp(const Slivers());
+void main() => runApp(const BasicStateMng());
