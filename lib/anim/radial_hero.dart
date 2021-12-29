@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 /*
-어떤 도형애서 다른 도형으로 Hero
+어떤 도형에서 다른 도형으로 Hero
 MaterialRectCenterArcTween 은 트윈 애니메이션을 정의
 PageRouteBuilder 를 사용하여 목적지 경로를 구축
 
-원형에서 직사각형으로 변형될 때 한 경로에서 다른 경로로 영웅을 비행하는 것은
-영웅 위젯을 사용하여 구현할 수 있는 매끄러운 효과입니다.
+원형에서 직사각형으로 변형될 때 한 경로에서 다른 경로로 Hero 를 비행하는 것은
+Hero 위젯을 사용하여 구현할 수 있는 매끄러운 효과입니다.
 이를 수행하기 위해 코드는 원과 사각형이라는 두 개의 클립 모양이
 교차하는 부분에 애니메이션을 적용합니다.
  */

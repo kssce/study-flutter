@@ -1,12 +1,14 @@
-// Flutter 위젯은 React 컴포넌트에서 영감을 얻었다.
-// 위젯의 상태가 변경되면 위젯은 기술된 내용을 다시 작성하고
-// 렌더 트리에서 다음 상태로 전환하는 데 필요한 최소한의 변경 사항을 결정하기 위해
-// 이전 설명과 비교한다.
+/*
+Flutter 위젯은 React 컴포넌트에서 영감을 얻었다.
+위젯의 상태가 변경되면 위젯은 기술된 내용을 다시 작성하고
+렌더 트리에서 다음 상태로 전환하는 데 필요한 최소한의 변경 사항을 결정하기 위해
+이전 설명과 비교한다.
 
-// Row, Column 은 flexbox 의 direction 옵션 적용한 것과 동일하다
-// Stack 은 position: absolute 와 동일
-// Container 는 div, View 와 동일
-// BoxDecoration 는 배경
+Row, Column 은 flexbox 의 direction 옵션 적용한 것과 동일하다
+Stack 은 position: absolute 와 동일
+Container 는 div, View 와 동일
+BoxDecoration 는 배경
+ */
 
 import 'package:flutter/material.dart';
 
@@ -48,7 +50,7 @@ class _BasicScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Materials is a conceptual piece of paper on which the UI appears.
-    return Material( // material UI 효과용 래핑 클래스
+    return Material( // material UI 효과용 래핑 위젯
       // Column is a vertical, linear layout.
       child: Column(
         children: <Widget>[

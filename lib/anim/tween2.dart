@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-// Controller: 시작 방향, 등 애니메이션 자체를 컨트롤
-//  두 개의 값(혹은 타입) 사이의 보간된 숫자를 생성한다.
-// CurvedAnimation: 애니메이션 진행 상황을 비선형 곡선으로 정의
-
+/*
+Controller: 시작 방향, 등 애니메이션 자체를 컨트롤
+  두 개의 값(혹은 타입) 사이의 보간된 숫자를 생성한다.
+CurvedAnimation: 애니메이션 진행 상황을 비선형 곡선으로 정의
+ */
 class Tween2 extends StatelessWidget {
   const Tween2({Key? key}) : super(key: key);
 

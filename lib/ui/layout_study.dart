@@ -1,35 +1,36 @@
-// Flutter 레이아웃 메커니즘의 핵심은 위젯입니다. Flutter 에서는 거의 모든 것이 위젯이고
-// 심지어 레이아웃 모델도 위젯이죠. Flutter 앱 내에서 볼 수 있는 이미지, 아이콘, 글자
-// 모두 위젯입니다.
-// 하지만 row, column, grid 같이 볼 수 없는 위젯들도 있는데요.
-// 이들은 보이는 위젯들을 제어하고, 제한하며, 정렬시켜줍니다.
+/*
+Flutter 레이아웃 메커니즘의 핵심은 위젯입니다. Flutter 에서는 거의 모든 것이 위젯이고
+심지어 레이아웃 모델도 위젯이죠. Flutter 앱 내에서 볼 수 있는 이미지, 아이콘, 글자
+모두 위젯입니다.
+하지만 row, column, grid 같이 볼 수 없는 위젯들도 있는데요.
+이들은 보이는 위젯들을 제어하고, 제한하며, 정렬시켜줍니다.
 
-// Container 는 자식 위젯들을 커스터마이징할 수 있는 위젯 클래스인데요. 여백, 간격,
-// 테두리 또는 배경색을 추가하고 싶을 때 Container 를 사용할 수 있습니다.
-// 예를 들면 텍스트나 Row 에 간격을 추가하고 싶으면 Container 안에 배치 해야 함
-// 이런 레이아웃이 아닌 스타일은 직접 지정하면 된다.
+Container 는 자식 위젯들을 커스터마이징할 수 있는 위젯 클래스인데요. 여백, 간격,
+테두리 또는 배경색을 추가하고 싶을 때 Container 를 사용할 수 있습니다.
+예를 들면 텍스트나 Row 에 간격을 추가하고 싶으면 Container 안에 배치 해야 함
+이런 레이아웃이 아닌 스타일은 직접 지정하면 된다.
 
-// 레이아웃 위젯: 보이는 위젯에 대해 정렬, 제한하는 다양한 방법을 지닌 위젯
-// Material UI 디자인을 적용하려면 Material 로 감싸야 한다.
-// 감싸지 않으면 제목, 앱바, 배경색 등이 포함되지 않는다.
-// MaterialApp 은 Material UI 를 사용할 수 있게 해주는 클래스
-// 타이틀 지정(안드로이드에서만 유효한 속성으로, 최근 사용한 앱 목록에 보여지는 text), 테마 지정 가능
-// 네비게이션도 지정할 수 있다.
-// Scaffold 와 Material 의 차이점은, 전자는 appBar, body 를 제공하며, 후자는 그냥
-// Material UI를 제공하는 빈 종이 같은 개념이다.
+레이아웃 위젯: 보이는 위젯에 대해 정렬, 제한하는 다양한 방법을 지닌 위젯
+Material UI 디자인을 적용하려면 Material 로 감싸야 한다.
+감싸지 않으면 제목, 앱바, 배경색 등이 포함되지 않는다.
+MaterialApp 은 Material UI 를 사용할 수 있게 해주는 클래스
+타이틀 지정(안드로이드에서만 유효한 속성으로, 최근 사용한 앱 목록에 보여지는 text), 테마 지정 가능
+네비게이션도 지정할 수 있다.
+Scaffold 와 Material 의 차이점은, 전자는 appBar, body 를 제공하며, 후자는 그냥
+Material UI를 제공하는 빈 종이 같은 개념이다.
 
-// 레이아웃이 너무 커서 장치에 맞지 않으면 영향을 받는 가장자리를 따라 노란색 및 검은색 줄무늬 패턴이 나타남
+레이아웃이 너무 커서 장치에 맞지 않으면 영향을 받는 가장자리를 따라 노란색 및 검은색 줄무늬 패턴이 나타남
 
-// 표준 위젯
-// Container: 패딩, 여백, 테두리, 배경색 등 스타일 줄 수 있는 안보이는 위젯
-// GridView: 위젯을 스크롤 가능한 그리드로 배치
-// ListView: 위젯을 스크롤 가능한 목록으로 배치
-// Stack: 위젯을 다른 위젯 위에 겹침
+표준 위젯
+Container: 패딩, 여백, 테두리, 배경색 등 스타일 줄 수 있는 안보이는 위젯
+GridView: 위젯을 스크롤 가능한 그리드로 배치
+ListView: 위젯을 스크롤 가능한 목록으로 배치
+Stack: 위젯을 다른 위젯 위에 겹침
 
-// 머티리얼 위젯
-// Card: 모서리가 둥근 그림자가 있는 상자(면) 관련 위젯
-// ListTile: 최대 3줄의 텍스트와 선택적 선행 및 후행 아이콘으로 구성
-
+머티리얼 위젯
+Card: 모서리가 둥근 그림자가 있는 상자(면) 관련 위젯
+ListTile: 최대 3줄의 텍스트와 선택적 선행 및 후행 아이콘으로 구성
+ */
 import 'package:flutter/material.dart';
 
 class LayoutStudy extends StatelessWidget {
@@ -40,6 +41,12 @@ class LayoutStudy extends StatelessWidget {
     return MaterialApp(
         title: 'layout',
         home: Scaffold(
+          /// resizeToAvoidBottomInset 는 Scaffold 의 body 나
+          /// floating button 이 가려지는 것을 막기위해 스스로 크기를 조절하고
+          /// 모두 보이게 할지를 결정하는 프로퍼티입니다.
+          /// resizeToAvoidBottomInset 의 Default 값이 true 이고,
+          /// Scaffold 의 body 가 더 이상 화면을 밀어서 조절할 공간이
+          /// 없으면 overflow 에러 발생
           resizeToAvoidBottomInset: false,
             appBar: AppBar(title: const Text('Layout Example')),
             body: ListView(children: <Widget>[

@@ -1,9 +1,11 @@
-// Flutter 에서는 화면과 페이지를 routes 라고 지칭함
-// 안드로이드: activity == route
-// iOS: ViewController == route
-
+/*
+Flutter 에서는 화면과 페이지를 routes 라고 지칭함
+안드로이드: activity == route
+iOS: ViewController == route
+ */
 import 'package:flutter/material.dart';
 
+/// 동적 라우팅
 class NavAndBack extends StatelessWidget {
   const NavAndBack({Key? key}) : super(key: key);
 

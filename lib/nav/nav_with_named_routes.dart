@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// 정적 라우팅
 class NavWithNamedRoutes extends StatelessWidget {
   const NavWithNamedRoutes({Key? key}) : super(key: key);
 

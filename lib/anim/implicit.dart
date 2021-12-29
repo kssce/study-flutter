@@ -1,26 +1,28 @@
-// 암시적 애니메이션 위젯들은 자동으로 변경사항을 애니메이션 합니다.
-// 애니메이션을 사용하면 대상 값을 설정하여 위젯 속성에 애니메이션을 적용할 수 있습니다.
-// 대상 값이 변경될 때마다 위젯은 이전 값에서 새 값으로 특성에 애니메이션을 적용합니다.
-// 컨트롤러 등으로 애니메이션 효과를 관리하지 않습니다.
-// (암시적 애니메이션은 자동으로 변경 사항을 애니메이션 함)
-// 값을 통한 애니메이션으로
-// old value 와 new value 의 사이를 보간(Interpolation)합니다
-// 암시적 애니메이션 위젯은 이 보간을 처리합니다.
-// (특정 키(시점)을 지정하고 그 사이를 보간하는 방식)
+/*
+암시적 애니메이션 위젯들은 자동으로 변경사항을 애니메이션 합니다.
+애니메이션을 사용하면 대상 값을 설정하여 위젯 속성에 애니메이션을 적용할 수 있습니다.
+대상 값이 변경될 때마다 위젯은 이전 값에서 새 값으로 특성에 애니메이션을 적용합니다.
+컨트롤러 등으로 애니메이션 효과를 관리하지 않습니다.
+(암시적 애니메이션은 자동으로 변경 사항을 애니메이션 함)
+값을 통한 애니메이션으로
+old value 와 new value 의 사이를 보간(Interpolation)합니다
+암시적 애니메이션 위젯은 이 보간을 처리합니다.
+(특정 키(시점)을 지정하고 그 사이를 보간하는 방식)
 
-// AnimatedDefaultTextStyle: Text 관련 스타일이 바뀔 때마다 자동적으로 애니메이션
-// AnimatedOpacity: 지정된 opacity 가 변경될 때마다 지정된 duration 동안 child 의 opacity 를 자동으로 애니메이션
-// AnimatedPadding: 패딩이 변경되면  자동으로 애니메이션
-// AnimatedPhysicalModel: borderRadius 와 elevation 이 변경될 때마다 자동으로 애니메이션
-// AnimatedPositioned: Stack 위젯에서 자식의 위치를 제어하며
-//   지정된 위치가 변경될 때마다 지정된 기간 동안 자식의 위치를 자동으로 애니메이션
-// AnimatedTheme: 지정된 Theme 이 변경될 때마다 지정된 Duration 동안 색상 등을 자동으로 전환하는 Theme 애니메이션
-// AnimatedSize: 주어진 자녀의 크기가 변할 때마다 주어진 기간 동안 자동으로 크기를 전환하는 애니메이션 위젯
-// AnimatedCrossFade: 두 자식 사이에서만 페이드 되지만 크기를 보강하며 뒤집습니다.
-// AnimatedSwitcher: 새 위젯과, AnimatedSwitcher 에서 자식으로 설정 한 위젯 간에 크로스 페이드를 수행하는 위젯
+AnimatedDefaultTextStyle: Text 관련 스타일이 바뀔 때마다 자동적으로 애니메이션
+AnimatedOpacity: 지정된 opacity 가 변경될 때마다 지정된 duration 동안 child 의 opacity 를 자동으로 애니메이션
+AnimatedPadding: 패딩이 변경되면  자동으로 애니메이션
+AnimatedPhysicalModel: borderRadius 와 elevation 이 변경될 때마다 자동으로 애니메이션
+AnimatedPositioned: Stack 위젯에서 자식의 위치를 제어하며
+  지정된 위치가 변경될 때마다 지정된 기간 동안 자식의 위치를 자동으로 애니메이션
+AnimatedTheme: 지정된 Theme 이 변경될 때마다 지정된 Duration 동안 색상 등을 자동으로 전환하는 Theme 애니메이션
+AnimatedSize: 주어진 자녀의 크기가 변할 때마다 주어진 기간 동안 자동으로 크기를 전환하는 애니메이션 위젯
+AnimatedCrossFade: 두 자식 사이에서만 페이드 되지만 크기를 보강하며 뒤집습니다.
+AnimatedSwitcher: 새 위젯과, AnimatedSwitcher 에서 자식으로 설정 한 위젯 간에 크로스 페이드를 수행하는 위젯
 
-// transitionBuilder :
+transitionBuilder :
 
+ */
 import 'package:flutter/material.dart';
 
 class ImplicitContainer extends StatefulWidget {

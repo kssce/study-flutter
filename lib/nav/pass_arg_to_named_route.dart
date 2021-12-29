@@ -18,7 +18,21 @@ class PassArgToNamedRoute extends StatelessWidget {
         _ExtractArgumentsScreen.routeName: (context) =>
             const _ExtractArgumentsScreen()
       },
-      // 명명된 route 를 처리하는 함수 제공
+
+      /**
+       * onGenerateRoute: 앱이 이름이 부여된 라우트를 네비게이팅할 때 호출됨. RouteSettings 가 전달됨
+       * RouteSettings: 다음과 같은 구조를 가짐
+       * const RouteSettings({
+          String name,  // 라우터 이름
+          bool isInitialRoute: false, // 초기 라우터인지 여부
+          Object arguments  // 파라미터
+          })
+
+       * routes 테이블에 PassArgumentsScreen1이 등록되지 않았지만 onGenerateRoute 함수에 의해 라우터 호출이 가능함
+       */
+      // Navigator.pushNamed() 가 호출된 때 실행됨
+      // 라우팅할 위젯에 생성자로 넘겨준느 방법이 더 편함
+      // ModalRoute.of(context) 를 사용수도 있음
       onGenerateRoute: (settings) {
         if (settings.name == _PassArgumentsScreen.routeName) {
           print("routing > ${settings.name}");

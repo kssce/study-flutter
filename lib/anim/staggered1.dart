@@ -46,7 +46,7 @@ TickerMode:
 
 TickerProviderStateMixin:
 TickerMode 에 정의된 대로 현재 트리가 활성화된 동안에만 틱하도록 구성된
-Ticker 개체를 제공합니다.
+Ticker 객체를 제공합니다.
 이 믹스인을 사용하는 클래스에서 AnimationController 를 만들려면
 새 애니메이션 컨트롤러를 만들 때마다 vsync: this 를
 애니메이션 컨트롤러 생성자에 전달합니다.
@@ -139,6 +139,7 @@ class StaggerAnimation extends StatelessWidget {
         ).animate(
           CurvedAnimation(
             parent: controller,
+            // Interval 은 커브를 0.0 ~ 1.0 중 특정 구간에 지정
             curve: const Interval(
               0.125,
               0.250,

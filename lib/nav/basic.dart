@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-// Hero 위젯은 `두 화면`을 애니메이션으로 연결
-// tag 는 Hero 를 식별하는 객체로 반드시 동일해야 함
-// 멀티미디어 같은거 확대 보기할때 간편하게 사용할 수 있을 것 같다.
-
+/*
+Hero 위젯은 `두 화면`을 애니메이션으로 연결
+tag 는 Hero 를 식별하는 객체로 반드시 동일해야 함
+멀티미디어 같은거 확대 보기할때 간편하게 사용할 수 있을 것 같다.
+ */
 class Basic extends StatelessWidget {
   const Basic({Key? key}) : super(key: key);
 
