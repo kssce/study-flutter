@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 /*
 상태를 바꾸면 해당 상태를 구독중인 자식이 다시 렌더링된다.
+(그 자식이 상수형 stateless 위젯이라도 마찬가지 (리액트와 동일))
 구 리액트에 있던 did~ 같은 라이프사이클 함수들이 있다.
 createState() 를 하면 프레임워크는 상태 트리에 새 상태 객체를 삽입 후 initState()를 호출함
 State 의 서브 클래스는 initState 를 재정의할 수 있다.
@@ -21,7 +22,7 @@ Stateful 위젯은 setState 함수가 불리면 자동으로 화면에 다시 �
  */
 
 class CounterDisplay extends StatelessWidget {
-  CounterDisplay({this.count});
+  const CounterDisplay({this.count});
 
   final int? count;
 
@@ -32,7 +33,7 @@ class CounterDisplay extends StatelessWidget {
 }
 
 class CounterIncrementor extends StatelessWidget {
-  CounterIncrementor({this.onPressed});
+  const CounterIncrementor({this.onPressed});
 
   final VoidCallback? onPressed;
 
@@ -40,7 +41,7 @@ class CounterIncrementor extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       onPressed: onPressed,
-      child: Text('Increment'),
+      child: const Text('Increment'),
     );
   }
 }

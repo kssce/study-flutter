@@ -17,21 +17,21 @@ class InteractiveExample extends StatelessWidget {
           title: const Text('Interactive example'),
         ),
         body: const Center(
-          child: TapboxA(),
+          child: TapBoxA(),
         ),
       ),
     );
   }
 }
 
-class TapboxA extends StatefulWidget {
-  const TapboxA({Key? key}) : super(key: key);
+class TapBoxA extends StatefulWidget {
+  const TapBoxA({Key? key}) : super(key: key);
 
   @override
-  _TapboxAState createState() => _TapboxAState();
+  _TapBoxAState createState() => _TapBoxAState();
 }
 
-class _TapboxAState extends State<TapboxA> {
+class _TapBoxAState extends State<TapBoxA> {
   bool _active = false;
 
   void _handleTap() {

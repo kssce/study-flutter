@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
   위젯의 크기에 따라 build.
   LayoutBuilder 의 builder function 은 layout 타임에 불리게 되고 constraints 를 제공
   정확히는
-    1. 처음으로 widget 이 layout 될 대
+    1. 처음으로 widget 이 layout 될 때
     2. 부모 widget 의 constraints 가 바뀔 때
     3. 부모 widget 이 해당 widget 을 업데이트 할 때
   불리게 됨
@@ -28,7 +28,7 @@ FittedBox: 특정 위젯의 남는 부분에 대해서 어떻게 처리할지 �
 예를 들면 이미지가 가로세로 비율에 따라 남거나 넘치는 경우 어떻게 처리할지
 FractionallySizedBox: 부모 사이즈 기준으로 비율로 너비 높이 지정 가능
  */
-
+// todo 여기부터 하면 됨
 class Responsive extends StatelessWidget {
   const Responsive({Key? key}) : super(key: key);
 

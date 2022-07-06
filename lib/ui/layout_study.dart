@@ -41,36 +41,37 @@ class LayoutStudy extends StatelessWidget {
     return MaterialApp(
         title: 'layout',
         home: Scaffold(
-          /// resizeToAvoidBottomInset 는 Scaffold 의 body 나
-          /// floating button 이 가려지는 것을 막기위해 스스로 크기를 조절하고
-          /// 모두 보이게 할지를 결정하는 프로퍼티입니다.
-          /// resizeToAvoidBottomInset 의 Default 값이 true 이고,
-          /// Scaffold 의 body 가 더 이상 화면을 밀어서 조절할 공간이
-          /// 없으면 overflow 에러 발생
-          resizeToAvoidBottomInset: false,
+
+            /// resizeToAvoidBottomInset 는 Scaffold 의 body 나
+            /// floating button 이 가려지는 것을 막기위해 스스로 크기를 조절하고
+            /// 모두 보이게 할지를 결정하는 프로퍼티입니다.
+            /// resizeToAvoidBottomInset 의 Default 값이 true 이고,
+            /// Scaffold 의 body 가 더 이상 화면을 밀어서 조절할 공간이
+            /// 없으면 overflow 에러 발생
+            resizeToAvoidBottomInset: false,
             appBar: AppBar(title: const Text('Layout Example')),
             body: ListView(children: <Widget>[
-                Container(
-                    height: 100,
-                    decoration: BoxDecoration(
-                        color: Colors.green[100],
-                      border: Border.all(width: 10, color: Colors.black38),
-                      borderRadius: const BorderRadius.all(Radius.circular(8)),
-                    ),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        // mainAxisSize: MainAxisSize.min, // 여분 공간 압축시켜서 최소 사이즈로 만듦
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Image.asset('assets/images/cat2.png'),
-                          Expanded(child: _Box(Colors.red[100]), flex: 2),
-                          // flexbox 의 flex-grow 와 동일
-                          // Box(),
-                          _Box(),
-                        ])),
-                // 남은 공간에 맞게 가로 세로 비율 유지해서 들어감
-                Expanded(child: Image.asset('assets/images/cat1.png')),
-                _leftColumn,
+              Container(
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.green[100],
+                    border: Border.all(width: 10, color: Colors.black38),
+                    borderRadius: const BorderRadius.all(Radius.circular(8)),
+                  ),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      // mainAxisSize: MainAxisSize.min, // 여분 공간 압축시켜서 최소 사이즈로 만듦
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Image.asset('assets/images/cat2.png'),
+                        Expanded(child: _Box(Colors.red[100]), flex: 2),
+                        // flexbox 의 flex-grow 와 동일
+                        // Box(),
+                        _Box(),
+                      ])),
+              // 남은 공간에 맞게 가로 세로 비율 유지해서 들어감
+              Expanded(child: Image.asset('assets/images/cat1.png')),
+              _leftColumn,
               _buildStack(),
             ])));
   }
@@ -109,26 +110,29 @@ Widget _genBox(Color? color) => Container(
     );
 
 Widget _buildStack() => Stack(
-  alignment: const Alignment(-0.3, -0.4),
-  children: [
-    // Positioned 는 Stack 내부에서만 동작하며 Stack 내부에서의 위치를 지정할 수 있다.
-    // z-index 는 별도의 라이브러리로 구현
-    const Positioned(top: -50, left: 20, child: CircleAvatar(
-      backgroundImage: AssetImage('images/pic.jpg'),
-      radius: 100,
-    )),
-    Container(
-      decoration: const BoxDecoration(
-        color: Colors.black45,
-      ),
-      child: const Text(
-        'cat!',
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
+      alignment: const Alignment(-0.3, -0.4),
+      children: [
+        // Positioned 는 Stack 내부에서만 동작하며 Stack 내부에서의 위치를 지정할 수 있다.
+        // z-index 는 별도의 라이브러리로 구현
+        const Positioned(
+            top: -50,
+            left: 20,
+            child: CircleAvatar(
+              backgroundImage: AssetImage('images/pic.jpg'),
+              radius: 100,
+            )),
+        Container(
+          decoration: const BoxDecoration(
+            color: Colors.black45,
+          ),
+          child: const Text(
+            'cat!',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
         ),
-      ),
-    ),
-  ],
-);
+      ],
+    );

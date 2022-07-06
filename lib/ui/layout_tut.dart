@@ -8,17 +8,17 @@ class FavoriteWidget extends StatefulWidget {
 }
 
 class _FavoriteWidgetState extends State<FavoriteWidget> {
-  bool _isFavorited = true;
+  bool _isFavorite = true;
   int _favoriteCount = 41;
 
   void _toggleFavorite() {
     setState(() {
-      if (_isFavorited) {
+      if (_isFavorite) {
         _favoriteCount -= 1;
-        _isFavorited = false;
+        _isFavorite = false;
       } else {
         _favoriteCount += 1;
-        _isFavorited = true;
+        _isFavorite = true;
       }
     });
   }
@@ -33,7 +33,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
           child: IconButton(
             padding: const EdgeInsets.all(0),
             alignment: Alignment.centerRight,
-            icon: (_isFavorited ? const Icon(Icons.star) : const Icon(
+            icon: (_isFavorite ? const Icon(Icons.star) : const Icon(
                 Icons.star_border)),
             color: Colors.red[500],
             onPressed: _toggleFavorite,

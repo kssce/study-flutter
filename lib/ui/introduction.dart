@@ -13,7 +13,7 @@ BoxDecoration 는 배경
 import 'package:flutter/material.dart';
 
 class _BasicAppBar extends StatelessWidget {
-  _BasicAppBar({ this.title });
+  const _BasicAppBar({this.title});
 
   final Widget? title;
 
@@ -24,7 +24,7 @@ class _BasicAppBar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8.0), // 좌우 8픽셀
         decoration: BoxDecoration(color: Colors.blue[500]),
         child: Row(
-          // <Widget> is the type of items in the list.
+            // <Widget> is the type of items in the list.
             children: <Widget>[
               const IconButton(
                 icon: Icon(Icons.menu),
@@ -40,9 +40,7 @@ class _BasicAppBar extends StatelessWidget {
                 tooltip: 'Search',
                 onPressed: null,
               )
-            ]
-        )
-    );
+            ]));
   }
 }
 
@@ -50,23 +48,19 @@ class _BasicScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Materials is a conceptual piece of paper on which the UI appears.
-    return Material( // material UI 효과용 래핑 위젯
+    return Material(
+      // material UI 효과용 래핑 위젯
       // Column is a vertical, linear layout.
       child: Column(
         children: <Widget>[
           _BasicAppBar(
             title: Text(
               'Happy Hacking',
-              style: Theme
-                  .of(context)
-                  .primaryTextTheme
-                  .headline6,
+              style: Theme.of(context).primaryTextTheme.headline6,
             ),
           ),
           const Expanded(
-            child: Center(
-                child: Text('Hello, Developer!')
-            ),
+            child: Center(child: Text('Hello, Developer!')),
           ),
         ],
       ),
@@ -79,7 +73,8 @@ class Introduction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( // 진입 화면에는 MaterialApp 사용 (네비게이션을 구성함)
+    return MaterialApp(
+      // 진입 화면에는 MaterialApp 사용 (네비게이션을 구성함)
       title: 'introduction',
       home: _BasicScaffold(),
     );

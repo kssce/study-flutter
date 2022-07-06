@@ -29,12 +29,12 @@ import 'ui/state_example.dart';
 // [ ui ]
 // void main() => runApp(const Introduction());
 // void main() => runApp(const StateExample());
-// void main() => runApp(const Layout());
+// void main() => runApp(const LayoutStudy());
 // void main() => runApp(const LayoutTutorial());
 // void main() => runApp(const Responsive());
 // void main() => runApp(const InteractiveExample());
-// void main() => runApp(AssetsAndImages());
-// void main() => runApp(const MyBoxConstraints());
+// void main() => runApp(const AssetsAndImages());
+void main() => runApp(const MyBoxConstraints());
 
 // [ navigation ]
 // void main() => runApp(const Basic());
@@ -49,13 +49,13 @@ import 'ui/state_example.dart';
 // void main() => runApp(const Slivers());
 // void main() => runApp(const BasicStateMng());
 
-void main() => runApp(
-      /// 다양한 상태를 관리하기 위해서는 MultiProvider 를 사용하고
-      /// 사용하려는 상태에 대해서는 ChangeNotifierProvider 를 사용
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => Counts()),
-        ],
-        child: const CounterApp(),
-      ),
-    );
+// void main() => runApp(
+//       /// 다양한 상태를 관리하기 위해서는 MultiProvider 를 사용하고
+//       /// 사용하려는 상태에 대해서는 ChangeNotifierProvider 를 사용
+//       MultiProvider(
+//         providers: [
+//           ChangeNotifierProvider(create: (_) => Counts()),
+//         ],
+//         child: const CounterApp(),
+//       ),
+//     );

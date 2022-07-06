@@ -42,6 +42,8 @@ class AssetsAndImages extends StatelessWidget {
 }
 
 class MyButton extends StatelessWidget {
+  const MyButton({Key? key}) : super(key: key);
+
   Future<String> _loadAsset() async {
     return await rootBundle.loadString('assets/config.json');
   }
