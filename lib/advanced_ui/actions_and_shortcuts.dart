@@ -125,7 +125,8 @@ class ActionsAndShortcuts extends StatelessWidget {
       /// 2. 단축키가 필요한 렌더 트리에 단축키 등록
       home: Shortcuts(
         // 키 입력마다 이벤트가 필요하면 ShortcutManager 상속 구현
-        manager: LoggingShortcutManager(),
+        // todo 이거 원래 되던 코든데 언젠가부터 안되서 일단 주석처리
+        // manager: LoggingShortcutManager(),
         // {키: 인텐트}로 키와 실행할 것(인텐트) 매핑
         shortcuts: <LogicalKeySet, Intent>{
           LogicalKeySet(LogicalKeyboardKey.escape): const ClearIntent(),

@@ -28,7 +28,6 @@ FittedBox: 특정 위젯의 남는 부분에 대해서 어떻게 처리할지 �
 예를 들면 이미지가 가로세로 비율에 따라 남거나 넘치는 경우 어떻게 처리할지
 FractionallySizedBox: 부모 사이즈 기준으로 비율로 너비 높이 지정 가능
  */
-// todo 여기부터 하면 됨
 class Responsive extends StatelessWidget {
   const Responsive({Key? key}) : super(key: key);
 

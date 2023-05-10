@@ -39,7 +39,7 @@ class CounterIncrementor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: onPressed,
       child: const Text('Increment'),
     );
