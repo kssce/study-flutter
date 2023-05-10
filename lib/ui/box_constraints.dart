@@ -1,6 +1,6 @@
 /*
 constraints 는 최소 너비, 최대 너비, 최소 높이, 최대 높이로 구성되며,
-크기는 특정 너비와 높이로 구성됨
+size는 특정 너비와 높이로 구성됨
 가능한 최대 크기로 하고 싶은 경우. 예를 들어, Center 및 ListView 에서 사용하는 박스들이 있습니다.
 자식 요소들과 같은 크기로 만들려는 경우. 예를 들어, Transform 및 Opacity 에서 사용하는 박스들이 있습니다.
 개별적인 크기를 갖게 하려는 경우. 예를 들어, Image 및 Text 에서 사용하는 박스들이 있습니다.
@@ -217,7 +217,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Expanded(
-                      // 박스
+                      // 박스 (이게 외각 바운더리)
                       child: ConstrainedBox(
                           constraints: const BoxConstraints.tightFor(
                               width: double.infinity, height: double.infinity),
