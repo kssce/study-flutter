@@ -56,6 +56,7 @@ BoxConstraints.tight: 해당 제약조건의 최대 너비는 최소 너비와 �
   해당 제약 조건의 최대 높이는 최소 높이와 같다.
   제약 조건을 입력하지 않는 경우 해당 min 값들은 0이 되고 max 값들은 무한이 된다.
   이 제약 조건은 가능한 정확한 크기를 제공한다.
+BoxConstraints.tightFor:는 값을 지정하면 min, max모두 지정값으로 설정되나 값을 지정하지 않으면 tight와 동일(min, max 모두 무한)
 BoxConstraints.loose: min 값들은 0, max 값들은 지정한 너비와 높이와 같다.
 BoxConstraints 자체는 지정한 제약조건을 지정한다.
 주로 ConstrainedBox 의 constraints 속성 지정에 사용된다.
@@ -216,12 +217,21 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  // 박스 (이게 외각 바운더리)
                   Expanded(
-                      // 박스 (이게 외각 바운더리)
+                  //   child:Container(
+                  // width:double.infinity, height:double.infinity, child:widget.examples[count - 1])),
+
                       child: ConstrainedBox(
                           constraints: const BoxConstraints.tightFor(
                               width: double.infinity, height: double.infinity),
                           child: widget.examples[count - 1])),
+
+                      // child: ConstrainedBox(
+                      //     constraints: const BoxConstraints(
+                      //       minWidth: 0, minHeight: 0,
+                      //         maxWidth: double.infinity, maxHeight: double.infinity),
+                      //     child: widget.examples[count - 1])),
                   Container(
                     // 버튼
                     height: 50,
@@ -531,7 +541,7 @@ class Example7 extends Example {
   Widget build(BuildContext context) {
     // 화면은 Center 가 화면과 정확히 같은 크기가 되도록 강제하므로 Center 가 화면을 채웁니다.
     // Center 는 빨간색 컨테이너에 원하는 크기가 될 수 있지만 화면보다 크지 않다고 알려줍니다.
-    // 빨간색 컨테이너는 크기가 없지만 [자식이 있으므로 자식과 같은 크기로 결정합니다.]
+    // 빨간색 컨테이너는 크기가 없지만 [**자식이 있으므로 자식과 같은 크기로 결정합니다.**]
     // 빨간색 컨테이너는 자식에게 원하는 크기가 될 수 있지만 화면보다 크지 않음을 알려줍니다.
     // 자식은 30 × 30이 되고자 하는 녹색 Container.
     // 빨간색 Container 의 크기가 자식의 크기에 맞게 조정된다는 점을 감안할 때
@@ -815,7 +825,7 @@ class Example15 extends Example {
     // 차이점은 자식이 공간에 맞지 않으면 경고를 표시하지 않는다는 것입니다.
     // 이 경우 컨테이너의 너비는 4000픽셀이고 너무 커서 OverflowBox 에 맞지 않지만
     // OverflowBox 는 단순히 가능한 한 경고가 표시되지 않습니다.
-    // [경고는 표시하지 않지만 실제로 화면 넘어까지 렌더링을 함]
+    // [**경고는 표시하지 않지만 실제로 화면 넘어까지 렌더링을 함**]
     return OverflowBox(
       minWidth: 0.0,
       minHeight: 0.0,
