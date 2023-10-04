@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intro_flutter/ui/instrics.dart';
 import 'package:provider/provider.dart';
 import 'package:intro_flutter/nav/nav_and_back.dart';
 import 'package:intro_flutter/nav/pass_arg_to_named_route.dart';
@@ -34,7 +35,8 @@ import 'ui/state_example.dart';
 // void main() => runApp(const Responsive());
 // void main() => runApp(const InteractiveExample());
 // void main() => runApp(const AssetsAndImages());
-void main() => runApp(const MyBoxConstraints());
+// void main() => runApp(const MyBoxConstraints());
+void main() => runApp(const Instrics());
 
 // [ navigation ]
 // void main() => runApp(const Basic());
